@@ -1,6 +1,61 @@
-# Mix-of-Products-Otimization
-Marketing Analytics compreende os processos e tecnologias que permitem aos profissionais de Marketing avaliar o sucesso de suas iniciativas. 
+# Product Mix Optimization — Estudo de Caso (Lua Smart Tech)
 
-Isso é feito medindo o desempenho das campanhas de Marketing, coletando os dados e analisando os resultados. Marketing Analytics utiliza métricas importantes de negócios, como ROI (Retorno Sobre o Investimento), Atribuição de Marketing e Eficácia Geral do Marketing. Em outras palavras, o Marketing Analytics mostra se os programas de Marketing estão sendo efetivos ou não.
+Projeto de otimização de mix de produtos com **programação linear** para apoiar decisões de produção. O foco é mostrar
+como Analytics conecta restrições operacionais a impacto financeiro, com uma abordagem típica de Engenharia Química
+(otimização de processo, gargalos e uso de capacidade).
 
-Marketing Analytics reúne dados de todos os canais de marketing e os consolida em uma visão de marketing comum. A partir dessa visão comum, você pode extrair resultados analíticos que podem fornecer assistência inestimável para impulsionar os esforços de marketing.
+## Contexto de negócio
+A Lua Smart Tech fabrica dois modelos de smartphone (Lua1 e Lua2). O time de operações precisa definir o plano de
+produção mensal considerando demanda, custo de componentes e capacidade de mão de obra (montagem e teste).
+
+## Decisão suportada
+- Mix ótimo de produção (quantidade por modelo)
+- Lucro máximo esperado
+- Gargalos de capacidade e folgas disponíveis
+
+## Premissas e dados (síntese)
+Valores em R$ e horas.
+
+| Parâmetro | Lua1 | Lua2 |
+| --- | ---:| ---:|
+| Demanda máxima (unid.) | 600 | 1200 |
+| Preço de venda | 300 | 450 |
+| Custo de componentes | 150 | 225 |
+| Horas de montagem | 5 | 6 |
+| Horas de teste | 1 | 2 |
+
+Capacidade mensal:
+- Montagem: 10.000 h
+- Teste: 3.000 h
+
+## Resultado do modelo
+- **Plano ótimo:** 560 unidades Lua1 e 1200 unidades Lua2
+- **Lucro máximo estimado:** R$ 199.600
+- **Gargalo:** montagem (100% utilizada)
+- **Folga:** teste (40 h) e demanda de Lua1 (40 unidades)
+
+## Por que isso importa para o negócio?
+- Direciona a produção para o maior retorno dado o gargalo real.
+- Indica onde expandir capacidade gera mais valor (montagem).
+- Transforma restrições operacionais em decisão financeira clara.
+
+## Conexão com Engenharia Química + Analytics
+A abordagem é análoga à otimização de processos industriais: recursos limitados, custos variáveis, demanda e decisão
+sobre o mix ótimo. A análise traduz o problema físico em um modelo matemático replicável.
+
+## Como executar
+Dependências principais:
+- `pulp`
+- `pandas`
+- `matplotlib`
+
+Abra o notebook:
+- `Mix of products Optimization.ipynb`
+
+## Estrutura do projeto
+- `Mix of products Optimization.ipynb`: estudo de caso completo, com modelo, solução e insights
+
+## Próximos passos sugeridos
+- Sensibilidade a demanda, preços e capacidade
+- Inclusão de custos fixos e setup
+- Expansão para mais linhas de produto
